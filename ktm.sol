@@ -1,15 +1,21 @@
-
 /*
 *
 * KTM token.
 *
+* Truly decentralized cryptocurrency.
+* This smart contract has no owner!
+* Each Token holder is the real owner, as well as the shareholder.
+* 
 * [✓] 4% Withdraw fee
 * [✓] 10% Deposit fee
 * [✓] 1% Token transfer
-* [✓] 33% Referal link
+* [✓] 3.3% Referal link
+*
 * Developed by Alex Burn.
+* https://github.com/alexburndev/ktmexchange/blob/master/ktm.sol
 *
 */
+pragma solidity ^0.4.25;
 
 library Address {
   function toAddress(bytes source) internal pure returns(address addr) {
@@ -25,7 +31,7 @@ library Address {
 }
 
 
-contract PZMTokenByAndSellConcept {
+contract KTM_Token_Exchange {
     
 
 
@@ -73,8 +79,8 @@ contract PZMTokenByAndSellConcept {
         uint256 tokens
 );
 
-    string public name = "PZM Token";
-    string public symbol = "PZMT";
+    string public name = "KTM Token";
+    string public symbol = "KTM";
     uint8 constant public decimals = 18;
     uint8 constant internal entryFee_ = 10;
     uint8 constant internal transferFee_ = 1;
@@ -207,6 +213,7 @@ contract PZMTokenByAndSellConcept {
         }
     }
 
+    
     function buyPrice() public view returns (uint256) {
         if (tokenSupply_ == 0) {
             return tokenPriceInitial_ + tokenPriceIncremental_;
